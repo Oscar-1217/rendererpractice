@@ -1,0 +1,16 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -DUNICODE -D_UNICODE
+LDFLAGS = -lgdi32 -luser32
+
+TARGET = app
+SOURCES = program.cpp window.cpp
+OBJECTS = $(SOURCES:.cpp=.o)
+
+$(TARGET): $(OBJECTS)
+	$(CXX) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	del /f /q $(OBJECTS) $(TARGET)
