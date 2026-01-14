@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++17 -Wall -DUNICODE -D_UNICODE
 LDFLAGS = -lgdi32 -luser32
 
-TARGET = app
+TARGET = app.exe
 SOURCES = program.cpp window.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 

@@ -10,6 +10,14 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
     case WM_DESTROY:
         PostQuitMessage(0);
         return 0;
+    case WM_PAINT:
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hWnd, &ps);
+
+        // Black background
+        FillRect(hdc, &ps.rcPaint, (HBRUSH)GetStockObject(BLACK_BRUSH));
+
+        EndPaint(hWnd, &ps);
     }
 
     return DefWindowProc(hWnd, uMsg, wParam, lParam);

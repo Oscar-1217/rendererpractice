@@ -13,7 +13,7 @@ int main() {
             running = false;
         }
 
-        // Render
+        // Render here
         Sleep(10);
     }
     delete pWindow;
